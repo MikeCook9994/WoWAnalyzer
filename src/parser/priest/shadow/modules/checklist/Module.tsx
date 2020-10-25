@@ -9,6 +9,7 @@ import AlwaysBeCasting from '../features/AlwaysBeCasting';
 import Component from './Component';
 import ShadowWordPain from '../spells/ShadowWordPain';
 import VampiricTouch from '../spells/VampiricTouch';
+import Insanity from '../core/Insanity';
 
 class Checklist extends BaseChecklist {
   static dependencies = {
@@ -18,6 +19,7 @@ class Checklist extends BaseChecklist {
     preparationRuleAnalyzer: PreparationRuleAnalyzer,
     shadowWordPain: ShadowWordPain,
     vampiricTouch: VampiricTouch,
+    insanity: Insanity,
   };
   protected combatants!: Combatants;
   protected castEfficiency!: CastEfficiency;
@@ -25,6 +27,7 @@ class Checklist extends BaseChecklist {
   protected preparationRuleAnalyzer!: PreparationRuleAnalyzer;
   protected shadowWordPain!: ShadowWordPain;
   protected vampiricTouch!: VampiricTouch;
+  protected insanity!: Insanity;
 
   render() {
     return (
@@ -38,7 +41,7 @@ class Checklist extends BaseChecklist {
           shadowWordPain: this.shadowWordPain.suggestionThresholds,
           vampiricTouch: this.vampiricTouch.suggestionThresholds,
           downtime: this.alwaysBeCasting.suggestionThresholds,
-
+          wasted: this.insanity.wastedSuggestionThresholds
         }}
       />
     );

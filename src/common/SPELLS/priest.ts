@@ -29,7 +29,7 @@ const spells: SpellList<PriestSpell> = {
     id: 32379,
     name: 'Shadow Word: Death',
     icon: 'spell_shadow_demonicfortitude',
-    manaCost: 800,
+    manaCost: 160,
   },
   POWER_INFUSION: {
     id: 265314,

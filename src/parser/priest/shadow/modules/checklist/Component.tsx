@@ -40,7 +40,7 @@ const ShadowPriestChecklist = ({ combatant, castEfficiency, thresholds }: any) =
         name="Maintain your DoTs on the boss"
         description={(
           <React.Fragment>
-            When not in <SpellLink id={SPELLS.VOIDFORM.id} />, it's important to keep your DoTs up on the boss. While in <SpellLink id={SPELLS.VOIDFORM.id} />,  your <SpellLink id={SPELLS.VAMPIRIC_TOUCH.id} />, <SpellLink id={SPELLS.DEVOURING_PLAGUE.id} />, and <SpellLink id={SPELLS.SHADOW_WORD_PAIN.id} /> durations are extended when the target or a nearby target gets hit by <SpellLink id={SPELLS.VOID_BOLT.id} />.
+            When not in <SpellLink id={SPELLS.VOIDFORM.id} />, it's important to keep your DoTs up on the boss. While in <SpellLink id={SPELLS.VOIDFORM.id} />,  your <SpellLink id={SPELLS.VAMPIRIC_TOUCH.id} /> and <SpellLink id={SPELLS.SHADOW_WORD_PAIN.id} /> durations are extended when the target or a nearby target gets hit by <SpellLink id={SPELLS.VOID_BOLT.id} />.
           </React.Fragment>
         )}
       >
@@ -60,6 +60,17 @@ const ShadowPriestChecklist = ({ combatant, castEfficiency, thresholds }: any) =
         <AbilityRequirement spell={SPELLS.VOID_BOLT.id} />
         <AbilityRequirement spell={SPELLS.MIND_BLAST.id} />
 
+      </Rule>
+
+      <Rule
+        name="Avoid Overcapping Insanity"
+        description={(
+          <React.Fragment>
+            The largest contributors to your damage are through your insanity spenders <SpellLink id={SPELLS.DEVOURING_PLAGUE.id} /> or <SpellLink id={SPELLS.SEARING_NIGHTMARE_TALENT.id} />. Thus, overcapping insanity can cause wasted damage if you waste enough of it. To avoid this, try to stay under 90 insanity unless explicitly pooling. 
+          </React.Fragment>
+        )}
+      >
+        <Requirement name="Wasted Insanity" thresholds={thresholds.wasted} />
       </Rule>
 
       <Rule
